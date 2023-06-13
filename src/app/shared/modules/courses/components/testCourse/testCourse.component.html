@@ -1,0 +1,106 @@
+<mc-navBar></mc-navBar>
+<div style="width: 1081px; margin: 15px auto; padding-bottom: 50px">
+  <div class="dsc">
+    <div class="information">
+      <img [src]="course.image" alt="" />
+      <h2>Mentor: {{ course.autor }}</h2>
+    </div>
+    <div class="tc">
+      <p
+        style="
+          color: #006bb6;
+          font-style: italic;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 150%;
+        "
+      >
+        {{ course.title }}
+      </p>
+      <h1
+        style="
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 150%;
+          color: #006bb6;
+        "
+      >
+        Test
+      </h1>
+    </div>
+    <div></div>
+  </div>
+
+  <div *ngFor="let item of question">
+    <div
+      style="
+        width: 1106px;
+        min-height: 114px;
+        border: 2px solid #1180f9;
+        padding: 14px 24px;
+        margin-top: 40px;
+      "
+    >
+      <p class="question">
+        {{ item.question }}
+      </p>
+      <p class="question">
+        {{ item.p1 }}
+      </p>
+      <p class="question">
+        {{ item.p2 }}
+      </p>
+      <p class="question">
+        {{ item.p3 }}
+      </p>
+      <ng-container *ngIf="item.id == 2">
+        <p class="question">2+0+0+2=4</p>
+        <p class="question">9+1+4=14=1+4=5</p>
+      </ng-container>
+    </div>
+    <input
+      *ngIf="item.id == 1"
+      nz-input
+      class="input"
+      [(ngModel)]="moneyEnergy"
+      type="text"
+      placeholder="enter your answer"
+    />
+    <input
+      *ngIf="item.id == 2"
+      nz-input
+      class="input"
+      [(ngModel)]="luckyFinancialCode"
+      type="text"
+      placeholder="enter your answer"
+    />
+    <input
+      *ngIf="item.id == 3"
+      nz-input
+      class="input"
+      [(ngModel)]="successfulPersonalYear"
+      type="text"
+      placeholder="enter your answer"
+    />
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; padding-bottom: 50px">
+    <button
+      class="tc"
+      style="
+        background: #0354ad;
+        border-radius: 5px;
+        width: 242px;
+        height: 36px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        cursor: pointer;
+      "
+      (click)="send()"
+    >
+      send a reply
+    </button>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!-- <span nz-icon nzType="logout" nzTheme="outline"></span> -->
+<mc-navBar></mc-navBar>
+<nz-spin
+  [nzSpinning]="loading"
+  style="text-align: center; min-height: 400px"
+  nzTip="{{ 'Loading' }}"
+>
+  <div class="dcc">
+    <img src="./../../../assets/home-back.svg" alt="" />
+    <div class="inputg">
+      <nz-input-group [nzSuffix]="suffixIconSearch" class="ina">
+        <input type="text" nz-input placeholder="Search for anything" />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <span nz-icon nzType="search"></span>
+      </ng-template>
+      <p>Pick Up where you left off</p>
+    </div>
+  </div>
+  <div class="courses">
+    <h2 class="title">Your Courses:</h2>
+    <div class="course" *ngFor="let course of courses">
+      <div class="img">
+        <img [src]="course.image" alt="" />
+      </div>
+      <div style="text-align: initial">
+        <a [routerLink]="['/courses', course.link]">
+          <h2 class="cour-title">{{ course.title }}</h2></a
+        >
+        <p class="autor">{{ course.autor }}</p>
+        <div class="df">
+          <p class="rating">{{ course.rating_1 }}</p>
+          <p class="rating">{{ course.rating_2 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nz-spin>

@@ -1,0 +1,18 @@
+.information {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  img {
+    width: 38px;
+  }
+  h2 {
+    margin-left: 20px;
+    color: #006bb6;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+  }
+}
+.ytp-impression-link {
+  display: none;
+}

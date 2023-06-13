@@ -1,0 +1,72 @@
+<div class="steps-auth">
+  <button nz-button nzType="default" (click)="decline()" class="prev">
+    <span nz-icon nzType="left" nzTheme="outline" style="color: #fff"></span>
+  </button>
+  <nz-progress
+    [nzPercent]="percent"
+    [nzShowInfo]="false"
+    style="width: 392px"
+    nzStrokeColor="#F84136"
+  ></nz-progress>
+</div>
+
+<div class="main-div sign">
+  <div class="steps-content"></div>
+
+  <img class="logo sign-lo" src="./../../../assets/logo.svg" alt="" />
+  <!-- <form nz-form [formGroup]="reportForm"> -->
+  <ng-container *ngIf="percent === 20">
+    <h1 class="title-sign">How old are you?</h1>
+
+    <input class="sign-input" type="text" [(ngModel)]="age" nz-input placeholder="Age" />
+  </ng-container>
+  <ng-container *ngIf="percent === 40">
+    <h1 class="title-sign">What is your nickname?</h1>
+
+    <input class="sign-input" type="text" [(ngModel)]="name" nz-input placeholder="Name" />
+  </ng-container>
+  <ng-container *ngIf="percent === 60">
+    <h1 class="title-sign">What are you most interested in?</h1>
+
+    <nz-list nzBordered nzSize="small" class="list-auth">
+      <nz-list-item
+        class="list-item"
+        [ngStyle]="{ backgroundColor: inter.selected ? '#91beef' : '' }"
+        *ngFor="let inter of interArray"
+        (click)="listSelect(inter, 'inter')"
+        >{{ inter.name }}</nz-list-item
+      >
+    </nz-list>
+  </ng-container>
+  <ng-container *ngIf="percent === 80">
+    <h1 class="title-sign">
+      What area of your life do you have problems with?
+    </h1>
+    <nz-list nzBordered nzSize="small" class="list-auth">
+      <nz-list-item
+        class="list-item"
+        [ngStyle]="{ backgroundColor: problem.selected ? '#91beef' : '' }"
+        *ngFor="let problem of problemsArray"
+        (click)="listSelect(problem, 'problems')"
+        >{{ problem.name }}</nz-list-item
+      >
+    </nz-list>
+  </ng-container>
+  <ng-container *ngIf="percent === 100">
+    <h1 class="title-sign">Where do you want to start?</h1>
+
+    <nz-list nzBordered nzSize="small" class="list-auth">
+      <nz-list-item
+        class="list-item"
+        [ngStyle]="{ backgroundColor: start.selected ? '#91beef' : '' }"
+        *ngFor="let start of startArray"
+        (click)="listSelect(start, 'start')"
+        >{{ start.name }}</nz-list-item
+      >
+    </nz-list>
+  </ng-container>
+  <!-- </form> -->
+  <div class="dcc" style="margin-top: 20px">
+    <button class="btn btn-primary dcc next" (click)="increase()">Next</button>
+  </div>
+</div>

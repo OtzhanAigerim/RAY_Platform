@@ -1,0 +1,84 @@
+<mc-navBar></mc-navBar>
+<div class="container">
+  <div style="margin-right: 30px">
+    <div class="name-con">
+      <img src="../../../../../assets/margulan.svg" alt="" />
+      <div>
+        <h1>Margulan Seisembai</h1>
+        <p class="name-course">Mentor of course “Financial literacy”</p>
+        <p class="city">From Almaty</p>
+        <p class="experience">Friendly mentor with 04 years of experience</p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div class="intro-title">
+        <h2>Introduction</h2>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"
+          >View all <span nz-icon nzType="right" nzTheme="outline"></span
+        ></a>
+      </div>
+      <div class="intro-body">
+        <p class="mentor">Mentor</p>
+        <h2>Financial literacy</h2>
+        <p class="about">About me</p>
+        <p class="text">
+          I am young and creative. I love to paint and be outdoors in the
+          mountains, in my free time I read, paint, practices yoga and work as a
+          financial literacy mentor. I love connecting with other people and
+          helping others whenever the opportunity arries. Well-known in
+          Kazakhstan billionaire, coach and businessman Margulan Seisembaev is
+          well known in the country and abroad. Today you can watch many videos
+          in which I teach viewers how to achieve success using an effective
+          methodology for this. By the way, according to him, it is based on
+          spiritual practices brought from Asia.
+        </p>
+        <p class="my">My creations</p>
+        <div class="df">
+          <a routerLink=""> <button class="btn voca">Vocabulary (1)</button></a>
+          <a routerLink="">
+            <button class="btn quiz">Quiz (1)</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <iframe
+      width="550"
+      height="274"
+      src="https://www.youtube.com/embed/PEk7fWPgPCo"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="margin-bottom: 20px"
+    ></iframe>
+    <div class="lesson">
+      <div class="intro-title">
+        <h2>Lesson</h2>
+        <a [routerLink]="['/home']" routerLinkActive="router-link-active"
+          >Lesson 1<span
+            style="font-size: 14px"
+            nz-icon
+            nzType="down"
+            nzTheme="outline"
+          ></span
+        ></a>
+      </div>
+      <div style="padding: 0 26px">
+        <p class="money">Money energy: bank card</p>
+        <p class="one">Lesson lasts * 1 Lessons</p>
+        <a [routerLink]="['/home']"><button class="btn start">Start</button></a>
+        <div class="dsc">
+          <div>
+            <span nz-icon nzType="heart" nzTheme="outline"></span>
+            <span nz-icon nzType="message" nzTheme="outline"></span>
+          </div>
+          <a [routerLink]=""><button class="btn less">Book lesson</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

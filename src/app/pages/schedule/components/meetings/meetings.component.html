@@ -1,0 +1,86 @@
+<mc-navBar></mc-navBar>
+<div class="meetings">
+  <div class="dsc title">
+    <p>Up coming lessons</p>
+    <h1>Meetings</h1>
+    <p></p>
+  </div>
+
+  <ng-container *ngFor="let meeting of meetings">
+    <p
+      [ngStyle]="{ color: meeting.id === 1 ? '#f84136' : '#000000' }"
+      style="
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 17px;
+        margin: 16px 0;
+      "
+    >
+      {{ meeting.nameDay }}, {{ meeting.day }} {{ meeting.month }}
+    </p>
+    <div
+      class="dec"
+      style="
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        width: 1081px;
+        height: 171px;
+        border-radius: 25px;
+      "
+    >
+      <div>
+        <h1 style="font-weight: 700; font-size: 14px; line-height: 20px">
+          {{ course.titleMentor }}
+        </h1>
+      </div>
+      <div>
+        <img
+          [src]="'../../../../assets/' + course.img + '.svg'"
+          style="height: 128px"
+          alt=""
+        />
+      </div>
+      <div style="text-align: start; height: 100%; padding-top: 26px">
+        <p
+          style="
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 15px;
+            color: #235789;
+            padding-bottom: 9px;
+          "
+        >
+          {{ course.nameCourse }}
+        </p>
+        <p
+          style="
+            font-style: italic;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 15px;
+          "
+        >
+        Duration: 30 minutes
+        </p>
+      </div>
+      <div>
+        <button
+          style="
+            background: #0354ad;
+            border-radius: 20px;
+            width: 162px;
+            height: 47px;
+            padding: 4px 19px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 15px;
+            color: #ffffff;
+            cursor: pointer;
+          "
+          (click)="startCourse(course.img, meeting.id)"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

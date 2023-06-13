@@ -1,0 +1,51 @@
+<div class="main-div sign">
+  <a [routerLink]="['/']"
+    ><img class="logo sign-lo" src="./../../../assets/logo.svg" alt=""
+  /></a>
+  <h1 class="title-sign">Sign in to your account</h1>
+  <form nz-form [formGroup]="signInForm" (ngSubmit)="submitForm()">
+    <nz-form-control style="margin-bottom: 10px" [nzErrorTip]="'Error'">
+      <label class="input-title">Email</label>
+      <input
+        class="sign-input"
+        type="text"
+        nz-input
+        placeholder="Email"
+        formControlName="email"
+      />
+    </nz-form-control>
+    <nz-form-control style="margin-bottom: 10px" [nzErrorTip]="'Error'">
+      <label class="input-title">Password</label>
+      <nz-input-group [nzSuffix]="suffixTemplate">
+        <input
+          class="sign-input"
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Password"
+          formControlName="password"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+        <span
+          style="font-size: 22px; color: #70747e; cursor: pointer"
+          nz-icon
+          [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+          (click)="passwordVisible = !passwordVisible"
+        ></span>
+      </ng-template>
+    </nz-form-control>
+    <nz-form-control>
+      <label class="input-title" nz-checkbox>Remember me</label>
+    </nz-form-control>
+    <div style="display: flex; justify-content: center; margin: 10px 0">
+      <button class="btn" type="submit">Sign in</button>
+    </div>
+    <p class="forgot">Forgot password?</p>
+    <p class="dont-acc">
+      Don’t have an account?
+      <a [routerLink]="['/register']"
+        ><span style="color: #f84136">Sign up</span></a
+      >
+    </p>
+  </form>
+</div>

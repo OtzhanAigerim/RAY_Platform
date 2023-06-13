@@ -1,0 +1,59 @@
+.inputg {
+  position: absolute;
+  .ina {
+    width: 457px;
+    height: 39px;
+    border-radius: 35px;
+    padding: 11px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #ffffff;
+  }
+}
+
+.courses {
+  width: 1081px;
+  margin: 22px auto;
+  .title {
+    color: #006bb6;
+    margin-top: 26px;
+    font-size: 16px;
+    line-height: 27px;
+  }
+  .course {
+    display: flex;
+    margin-top: 22px;
+    .img {
+      width: 210px;
+    }
+    .cour-title {
+      color: #006bb6;
+      margin-bottom: 23px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    .autor {
+      margin-bottom: 26px;
+      color: #7d7d7d;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    .rating {
+      margin-right: 52px;
+      width: 252px;
+      font-size: 14px;
+      line-height: 16px;
+      color: #006bb6;
+      line-height: 26px;
+    }
+  }
+}

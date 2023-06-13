@@ -1,0 +1,86 @@
+<mc-navBar></mc-navBar>
+<nz-spin
+  [nzSpinning]="loading"
+  [nzSize]="'large'"
+  style="margin: 0 auto; width: 1081px; margin-top: 40px; height: 100%"
+>
+  <div style="margin: 0 auto; width: 1081px">
+    <h1
+      style="
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: #006bb6;
+      "
+    >
+      Schedule by your course
+    </h1>
+    <div
+      class="dec"
+      style="
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        margin-top: 29px;
+        width: 1081px;
+        height: 171px;
+        border-radius: 25px;
+      "
+      *ngFor="let courses of scheduleCourses"
+    >
+      <div>
+        <h1 style="font-weight: 700; font-size: 14px; line-height: 20px">
+          {{ courses.titleMentor }}
+        </h1>
+      </div>
+      <div>
+        <img
+          [src]="'../../../../assets/' + courses.img + '.svg'"
+          style="height: 128px"
+          alt=""
+        />
+      </div>
+      <div style="text-align: start; height: 100%; padding-top: 26px">
+        <p
+          style="
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 15px;
+            color: #235789;
+            padding-bottom: 9px;
+          "
+        >
+          {{ courses.nameCourse }}
+        </p>
+        <p
+          style="
+            font-style: italic;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 15px;
+          "
+        >
+          {{ courses.meetings }} meetings
+        </p>
+      </div>
+      <div>
+        <button
+          style="
+            background: #0354ad;
+            border-radius: 20px;
+            width: 162px;
+            height: 47px;
+            padding: 4px 19px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 15px;
+            color: #ffffff;
+            cursor: pointer;
+          "
+          (click)="goToCourse(courses.id)"
+        >
+          See upcoming meetings
+        </button>
+      </div>
+    </div>
+  </div>
+</nz-spin>

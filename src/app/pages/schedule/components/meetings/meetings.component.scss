@@ -1,0 +1,28 @@
+.meetings {
+  width: 1081px;
+  margin: 0 auto;
+  .title {
+    margin: 21px 0 10px 0;
+    p {
+      color: #000000;
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: 300;
+    }
+    h1 {
+      color: #006bb6;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+  }
+  ul {
+    margin-bottom: 45px;
+    li {
+      color: #d7d7d7;
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: 400;
+    }
+  }
+}

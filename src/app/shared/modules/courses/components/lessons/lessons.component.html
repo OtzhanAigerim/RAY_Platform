@@ -1,0 +1,78 @@
+<mc-navBar></mc-navBar>
+<div style="width: 1081px; margin: 15px auto" *ngIf="lesson && course">
+  <div class="dsc">
+    <button nz-button nzType="default" class="prev" (click)="back(lesson.id)">
+      <span nz-icon nzType="left" nzTheme="outline" style="color: #fff"></span>
+    </button>
+    <div class="tc">
+      <p
+        style="
+          color: #006bb6;
+          font-style: italic;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 150%;
+        "
+      >
+        {{ course.title }}
+      </p>
+      <h1
+        style="
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 150%;
+          color: #006bb6;
+        "
+      >
+        {{ lesson.text }}
+      </h1>
+    </div>
+    <div></div>
+  </div>
+  <div class="information">
+    <img [src]="course.image" alt="" />
+    <h2>Mentor: {{ course.autor }}</h2>
+  </div>
+  <nz-spin
+    [nzSpinning]="loading"
+    [nzSize]="'large'"
+    style="margin: 0 auto; width: 1081px; margin-top: 40px; height: 100%"
+  >
+    <ng-container *ngIf="lesson.id">
+      <mc-videos
+        [id]="lesson.id"
+      ></mc-videos>
+    </ng-container>
+  </nz-spin>
+  <div style="margin-top: 38px">
+    <p
+      style="
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #000000;
+      "
+    >
+      {{ lesson.description }}
+    </p>
+  </div>
+  <div style="text-align: end; margin-top: 30px; padding-bottom: 50px">
+    <button
+      class="tc"
+      style="
+        background: #0354ad;
+        border-radius: 5px;
+        width: 242px;
+        height: 36px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        cursor: pointer;
+      "
+      (click)="next(lesson.id)"
+    >
+      {{ lesson.id === 7 ? "Go to test" : "next lesson" }}
+    </button>
+  </div>
+</div>

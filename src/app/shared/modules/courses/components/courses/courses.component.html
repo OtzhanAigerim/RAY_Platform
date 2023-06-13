@@ -1,0 +1,131 @@
+<mc-navBar></mc-navBar>
+<div class="courses" *ngIf="course">
+  <div class="head">
+    <button nz-button nzType="default" class="prev" (click)="back()">
+      <span nz-icon nzType="left" nzTheme="outline" style="color: #fff"></span>
+    </button>
+    <h1>{{ course.title }}</h1>
+  </div>
+  <div class="img">
+    <img
+      style="width: 1081px"
+      [src]="'../../../../../assets/' + course.image"
+      alt=""
+    />
+    <span
+      nz-icon
+      [nzType]="'heart'"
+      [nzTheme]="'twotone'"
+      [nzTwotoneColor]="putLike ? '#F84136' : '#fff'"
+      (click)="like()"
+    ></span>
+  </div>
+  <div>
+    <div class="information">
+      <img [src]="'../../../../../assets/' + course.logo" alt="" />
+      <h2>Mentor: {{ course.mentor }}</h2>
+    </div>
+    <p class="info-text">
+      {{ course.description }}
+      <span style="cursor: pointer">Read More</span>
+    </p>
+    <div *ngIf="course.game === 'perfect-you'">
+      <div class="game">
+        <p class="ex-toy">
+          Exercise toy.
+          <span
+            >Write a letter, but imagine your favorite toy instead. Open
+            yourself up from different angles.</span
+          >
+        </p>
+        <p class="your-point">
+          Your A point is where you are now and where you want to start
+        </p>
+      </div>
+      <div class="tc">
+        <input nz-input placeholder="text here" [(ngModel)]="perfectYou" />
+        <br />
+        <a style="padding: 55px 0"
+          ><button class="btn start" (click)="continue(course.game)">
+            Continue
+          </button></a
+        >
+      </div>
+    </div>
+
+    <div *ngIf="course.game === 'women-secret'">
+      <div class="dc game">
+        <h1>What destroys relationship?</h1>
+
+        <div *ngFor="let item of women_secret">
+          <label
+            nz-checkbox
+            [(ngModel)]="item.checked"
+            class="dc"
+            style="
+              font-size: 14px;
+              color: #cdcdcd;
+              font-weight: 400;
+              line-height: 22px;
+              margin-top: 22px;
+            "
+            >{{ item.title }}</label
+          >
+        </div>
+      </div>
+      <div class="tc" style="padding: 55px 0">
+        <!-- [routerLink]="['/home']" -->
+        <a
+          ><button class="btn start" (click)="continue(course.game)">
+            Continue
+          </button></a
+        >
+      </div>
+    </div>
+
+    <div
+      *ngIf="course.game === 'financial-literacy'"
+      style="padding-bottom: 60px"
+    >
+      <div class="dc game">
+        <h2>List of lessons</h2>
+
+        <div
+          class="dsc lessons"
+          (mouseenter)="showButton(question)"
+          (mouseleave)="hideButton(question)"
+          *ngFor="let question of financial_literacy"
+        >
+          <p
+            style="
+              font-style: italic;
+              font-weight: 300;
+              font-size: 15px;
+              line-height: 16px;
+            "
+          >
+            {{ question.id }}. {{ question.text }}
+          </p>
+          <button
+            class="tc"
+            style="
+              background: #0354ad;
+              border-radius: 5px;
+              width: 242px;
+              height: 36px;
+              color: #fff;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 22px;
+              cursor: pointer;
+            "
+            (click)="startLesson(question.id)"
+            *ngIf="question.btnVisible"
+          >
+            Start the lesson
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

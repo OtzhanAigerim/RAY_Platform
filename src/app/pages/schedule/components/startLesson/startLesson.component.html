@@ -1,0 +1,58 @@
+<mc-navBar></mc-navBar>
+<nz-spin
+  [nzSpinning]="loading"
+  [nzSize]="'large'"
+  style="margin: 0 auto; width: 1081px; margin-top: 40px; height: 100%"
+>
+  <div style="margin: 0 auto; width: 1081px; margin-top: 40px">
+    <img
+      [src]="'../../../../../assets/' + course.img + '.svg'"
+      style="width: 158px; margin: 0 auto 36px auto"
+      alt=""
+    />
+    <h1
+      style="
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: #006bb6;
+      "
+    >
+      Let's start the lesson?
+    </h1>
+    <p
+      style="
+        color: #575757;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: center;
+        margin-top: 10px;
+      "
+    >
+      {{ lesson.fullDay }}, {{ lesson.shortmonth }} {{ lesson.day }} at
+      {{ lesson.time }} was opened 30-minute lesson with
+      {{ course.titleMentor }}
+    </p>
+    <div class="tc">
+      <button
+        style="
+          background: #0354ad;
+          border-radius: 10px;
+          width: 342px;
+          height: 50px;
+          color: #ffffff;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 15px;
+          margin-top: 15px;
+          cursor: pointer;
+        "
+        (click)="startLesson(lesson.id, course.img)"
+      >
+        Go to lesson
+      </button>
+    </div>
+  </div>
+</nz-spin>

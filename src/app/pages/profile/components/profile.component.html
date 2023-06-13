@@ -1,0 +1,105 @@
+<mc-navBar></mc-navBar>
+<div class="df profile page">
+  <div class="df">
+    <img class="img" [src]="profile.logo" alt="" />
+    <div class="dcc">
+      <div>
+        <h1 class="name">{{ profile.fio }}</h1>
+        <p class="email">{{ profile.email }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div>
+      <h1 class="title">Self development</h1>
+      <div class="dcc btn">
+        <span
+          nz-icon
+          nzType="caret-right"
+          class="icon"
+          nzTheme="outline"
+        ></span>
+      </div>
+    </div>
+    <div>
+      <nz-progress
+        [nzPercent]="profile.procent"
+        nzType="circle"
+        [nzFormat]="formatOne"
+        [nzWidth]="112"
+        nzStrokeColor="#FECB17"
+      ></nz-progress>
+    </div>
+  </div>
+</div>
+<div class="block page" style="display: block">
+  <div class="title-profile">
+    <h1 class="h1">Course I am taking</h1>
+    <a><span class="span">View all </span></a>
+  </div>
+
+  <div class="df">
+    <div
+      class="course-container"
+      *ngFor="let course_taking of profile.course_taking"
+    >
+      <img [src]="course_taking.logo" style="width: 199px" alt="" />
+      <div class="container-text">
+        <h2 class="h2">
+          <a [routerLink]="['/courses/', course_taking.code]">
+            {{ course_taking.name }}
+          </a>
+        </h2>
+        <p class="p">
+          <a [routerLink]="['/', course_taking.mentor_code]">{{
+            course_taking.mentor_name
+          }}</a>
+        </p>
+        <nz-progress
+          [nzPercent]="course_taking.procent"
+          [nzShowInfo]="false"
+          nzStrokeColor="#A0D468"
+        ></nz-progress>
+      </div>
+    </div>
+
+    <div class="ma mr0">
+      <button class="btn btn-primary dcc">
+        <a [routerLink]="['/']" class="ap">Continue</a>
+      </button>
+      <button class="btn btn-white dcc">
+        <a [routerLink]="['/']" class="aw">Rate the course</a>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="block page" style="display: block; margin-top: 30px">
+  <div class="title-profile">
+    <h1 class="h1">Mentors of the chosen course</h1>
+    <a [routerLink]="['/courses']"><span class="span">View all </span></a>
+  </div>
+  <div *ngFor="let mentor_choose of profile.mentor_choose">
+    <img
+      [src]="mentor_choose.logo"
+      style="margin-bottom: 30px; width: 140px"
+      alt=""
+    />
+    <p class="p">{{ mentor_choose.name }}</p>
+  </div>
+</div>
+<div class="block page" style="display: block; margin-top: 30px">
+  <div class="title-profile">
+    <h1 class="h1">Favourites</h1>
+    <a [routerLink]="['/courses']"><span class="span">View all </span></a>
+  </div>
+  <div *ngFor="let favourite of profile.favourites">
+    <img
+      [src]="favourite.logo"
+      style="margin-bottom: 30px; width: 140px"
+      alt=""
+    />
+    <p class="p">{{ favourite.name }}</p>
+  </div>
+</div>

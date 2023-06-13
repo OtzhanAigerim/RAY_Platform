@@ -1,0 +1,52 @@
+<nav style="padding: 16px 32px">
+  <div class="container">
+    <div>
+      <a [routerLink]="['/']" class=""> RAY </a>
+    </div>
+
+    <ng-container *ngIf="!adminProps">
+      <div>
+        <nz-input-group [nzSuffix]="suffixIconSearch" class="ina">
+          <input
+            type="text"
+            nz-input
+            placeholder="what interests you"
+            [(ngModel)]="searchInput"
+            (input)="navigateToSearch()"
+          />
+        </nz-input-group>
+        <ng-template #suffixIconSearch>
+          <span nz-icon nzType="search"></span>
+        </ng-template>
+      </div>
+      <div class="nav">
+        <ul class="nav-ul">
+          <li class="nav-item">
+            <a [routerLink]="['/schedule']" routerLinkActive="active"
+              >Schedule
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              [routerLink]="['/home']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Home page
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+    <div class="df">
+      <button class="btn btn-white dcc" style="margin-right: 24px">
+        <a [routerLink]="['/welcome']" class="aw" (click)="logOut()">Log out</a>
+      </button>
+      <button class="btn btn-primary dcc">
+        <a [routerLink]="[admin ? '/admin' : '/profile']" class="ap">{{
+          nickname
+        }}</a>
+      </button>
+    </div>
+  </div>
+</nav>

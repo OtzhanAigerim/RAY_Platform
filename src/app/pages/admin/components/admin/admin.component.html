@@ -1,0 +1,80 @@
+<mc-navBar [admin]="admin"></mc-navBar>
+<div class="container">
+  <div class="df">
+    <div>
+      <img src="../../../../../assets/admin/admin.svg" alt="" />
+    </div>
+    <div class="dcc">
+      <div>
+        <h1 class="title">{{ title }}</h1>
+        <p class="email">{{ email }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dsc">
+    <h1 style="color: #235789; font-size: 24px; font-weight: 700">Course</h1>
+    <button class="btn btn-course">Add Course</button>
+  </div>
+  <div
+    class="dsc"
+    style="
+      margin-top: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px dotted #000000;
+    "
+  >
+    <div
+      *ngFor="let course of courses"
+      class="course"
+      [ngClass]="{ selected: course.selected }"
+      (click)="selectCourse(course)"
+    >
+      <h1>
+        {{ course.name }}
+      </h1>
+
+      <p>
+        <span style="font-weight: 600">Lessons:</span>
+        {{ course.lessons.length }}
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="selectedCourse">
+    <div class="dsc">
+      <p style="font-size: 15px">Course name:</p>
+      <p style="font-size: 24px; color: #235789; font-weight: 800">
+        {{ selectedCourse.name }}
+      </p>
+      <p></p>
+    </div>
+
+    <div class="dsc">
+      <h1 style="color: #235789; font-size: 24px; font-weight: 700">Lessons</h1>
+    </div>
+
+    <div class="df">
+      <div>
+        <div
+          style="width: 850px; font-size: 15px; height: 36px"
+          class="dc selectLesson"
+          *ngFor="let lessons of selectedCourse.lessons"
+        >
+          <p style="width: 400px">
+            {{ lessons.name }}
+          </p>
+          <p>
+            {{ lessons.questions }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <button class="btn">Add lesson</button>
+        <button class="btn" style="background-color: #ffffff; color: #235789">
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

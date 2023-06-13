@@ -1,0 +1,28 @@
+.sign {
+  width: 347px;
+  margin: 0 auto;
+}
+.sign-lo {
+  width: 160px;
+  margin: auto;
+  padding: 60px 0 33px 0;
+}
+.input-title {
+  font-weight: 500;
+  color: #006bb6;
+}
+.sign-input{
+  height: 39px;
+  font-size: 14px;
+  line-height: 15px;
+}
+.sign-input::placeholder{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+// ::ng-deep .ant-checkbox-inner{
+//   width: 30px;
+//   height: 30px;
+// }
+

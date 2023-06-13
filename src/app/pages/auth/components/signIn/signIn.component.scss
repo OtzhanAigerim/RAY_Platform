@@ -1,0 +1,44 @@
+.sign {
+  width: 347px;
+  margin: 0 auto;
+}
+.sign-lo {
+  width: 160px;
+  margin: auto;
+  padding: 60px 0 33px 0;
+}
+.input-title {
+  font-weight: 500;
+  color: #006bb6;
+}
+.sign-input {
+  height: 39px;
+  font-size: 14px;
+  line-height: 15px;
+}
+.sign-input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+.btn {
+  width: 202px;
+  height: 31px;
+  background: #0354ad;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+.forgot {
+  font-size: 14px;
+  color: #0354ad;
+  text-align: center;
+}
+.dont-acc {
+  color: #575757;
+  font-size: 14px;
+  text-align: center;
+}

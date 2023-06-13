@@ -1,0 +1,32 @@
+.information {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  img {
+    width: 38px;
+  }
+  h2 {
+    margin-left: 20px;
+    color: #006bb6;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+  }
+}
+.question {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration-line: underline;
+}
+.input {
+  width: 1106px;
+  height: 120px;
+  border: 1px solid #c4c4c4;
+  padding: 19px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 26px;
+  color: #c4c4c4;
+}
